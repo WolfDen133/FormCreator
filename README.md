@@ -5,7 +5,8 @@ You can create as many forms as you want
 (more info in config)
 
 ## Form example
-```Example:                                            # Internal unique identifier (can be anything)
+```
+Example:                                            # Internal unique identifier (can be anything)
   Command: testform                                 # The command that opens the form (can be anything)
   CommandDescription: Test form command description # The command description (can be anything)
   CommandPermission: form.perm                      # The command permission (can be anything)
@@ -23,4 +24,5 @@ You can create as many forms as you want
       ImageType: 0
       ImagePath: textures/items/iron_sword
       CommandSender: Console
-      Command: say This is also a test```
+      Command: say This is also a test
+      ```
