@@ -5,6 +5,9 @@ You can create as many forms as you want
 (more info in config)
 
 ## Form example
+
+[ExampleUI Image](https://i.imgur.com/Tjt4A6r.png)
+
 ```
 Example:                                            # Internal unique identifier (can be anything)
   Command: testform                                 # The command that opens the form (can be anything)
@@ -25,5 +28,3 @@ Example:                                            # Internal unique identifier
       ImagePath: textures/items/iron_sword
       CommandSender: Console
       Command: say This is also a test```
-
-[ExampleUI Image](https://i.imgur.com/Tjt4A6r.png)
