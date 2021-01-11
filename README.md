@@ -6,7 +6,7 @@ You can create as many forms as you want
 
 ## Form example
 
-[ExampleUI Image](https://i.imgur.com/Tjt4A6r.png)
+![ExampleUI Image](https://i.imgur.com/Tjt4A6r.png)
 
 ```
 Example:                                            # Internal unique identifier (can be anything)
