@@ -24,5 +24,4 @@ Example:                                            # Internal unique identifier
       ImageType: 0
       ImagePath: textures/items/iron_sword
       CommandSender: Console
-      Command: say This is also a test
-      ```
+      Command: say This is also a test```
