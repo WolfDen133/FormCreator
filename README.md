@@ -25,3 +25,5 @@ Example:                                            # Internal unique identifier
       ImagePath: textures/items/iron_sword
       CommandSender: Console
       Command: say This is also a test```
+
+[ExampleUI Image](https://i.imgur.com/Tjt4A6r.png)
