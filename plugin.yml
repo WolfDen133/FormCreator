@@ -1,6 +1,8 @@
 ---
 name: FormCreator
-version: 0.0.1
+author: WolfDen133
+
+version: 1.0.0
 main: WolfDen133\FormCreator\FormCreator
-api: 3.19.0
+api: 3.0.0
 ...
