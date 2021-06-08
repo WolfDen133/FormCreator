@@ -1,3 +1,4 @@
+[![](https://poggit.pmmp.io/shield.state/FormCreator)](https://poggit.pmmp.io/p/FormCreator)
 # FormCreator (NEW)
 A simple plugin for creating simple forms through config
 
