@@ -1,0 +1,6 @@
+---
+name: FormCreator
+version: 0.0.1
+main: WolfDen133\FormCreator\FormCreator
+api: 3.19.0
+...

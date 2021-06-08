@@ -1,0 +1,68 @@
+---
+
+# Plugin messages (Feel free to edit if you are in a different language)
+#
+# '{NAME}' is the name of the form (e.g. would return 'ExampleForm')
+# '{KEY}' is the command key (e.g. would return '1')
+messages:
+  errors:
+    invalid-sender: 'Error: This command can only be executed by players'
+    no-forms: 'No valid form data section was found, disabling plugin.'
+    no-messages: 'No messages where, rewriting default messages.'
+  warnings:
+    form:
+      title: 'The form {NAME} has no valid title set.'
+      command: 'The form {NAME} has no valid command field set.'
+      command-label: 'The form {NAME} has no valid command label set.'
+    commands:
+      sender: 'The command {KEY} in the form {NAME} has no valid sender set.'
+      label: 'The command {KEY} in the form {NAME} has no valid label set.'
+      invalid-sender: 'The command {KEY} in the form {NAME} has an invalid sender.'
+
+
+
+# Forms data area (This is where your forms will be)
+forms:
+
+  # Form internal identifier (This can be anything, keep in mind that there can be)
+  example:
+
+    # Command data (label is required, nothing else is)
+    command:
+      label: "openexample"
+      description: "Opens the example ui"
+      permission: "example.command.use"
+
+    # Form data (title is required, content is not)
+    title: "&eHello world"
+    content: "&aThis is a test form :)"
+
+    # Buttons
+    buttons:
+
+      # Add your buttons here
+      # The index will be the button's display name
+      "&eButton 1":
+
+        # Image data (Delete these to disable an image)
+        image-type: 0
+        image-path: "textures/ui/MashupIcon"
+
+        # Here are the commands that the button will execute
+        # You can set the sender for each command (Both label and sender are required)
+        commands:
+          - label: "title {player} title Welcome!"
+            sender: "console"
+          - label: "say &bHello {player}!"
+            sender: "player"
+
+
+      "&cButton 2":
+        commands:
+          - label: "title {player} title Awesome!"
+            sender: "console"
+
+          - label: "say &bThis plugin is cool!"
+            sender: "player"
+
+...
