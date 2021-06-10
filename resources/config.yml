@@ -35,14 +35,14 @@ forms:
 
     # Form data (title is required, content is not)
     title: "&eHello world"
-    content: "&aThis is a test form :)"
+    content: "&aHello {PLAYER}! :) {LINE} &bOnline players&7: &l&3{ONLINE_PLAYERS}&8/&3{MAX_PLAYERS} {LINE}{LINE} This plugin is cool :)"
 
     # Buttons
     buttons:
 
       # Add your buttons here
       # The index will be the button's display name
-      "&eButton 1":
+      "&eButton 1{LINE}&eClick me!!":
 
         # Image data (Delete these to disable an image)
         image-type: 0
@@ -51,15 +51,15 @@ forms:
         # Here are the commands that the button will execute
         # You can set the sender for each command (Both label and sender are required)
         commands:
-          - label: "title {player} title Welcome!"
+          - label: "title {PLAYER} title Welcome!"
             sender: "console"
-          - label: "say &bHello {player}!"
+          - label: "say &bHello {PLAYER}!"
             sender: "player"
 
 
       "&cButton 2":
         commands:
-          - label: "title {player} title Awesome!"
+          - label: "title {PLAYER} title Awesome!"
             sender: "console"
 
           - label: "say &bThis plugin is cool!"
