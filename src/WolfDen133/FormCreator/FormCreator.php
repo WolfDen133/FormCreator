@@ -304,12 +304,13 @@ class FormCreator extends PluginBase
         $buttons = ($this->forms[$name])->getElements();
 
         foreach ($buttons as $name=>$data) {
+            $b_name = $name;
 
             foreach ($this->wildcards as $wildcard=>$value) {
                 $name = str_replace($wildcard, $value, $name);
             }
 
-            $form->addButton(TextFormat::colorize(str_replace("{PLAYER}", $player->getName(), $name)), $data["image-type"] ?? -1, $data["image-path"] ?? "", $name);
+            $form->addButton(TextFormat::colorize(str_replace("{PLAYER}", $player->getName(), $name)), $data["image-type"] ?? -1, $data["image-path"] ?? "", $b_name);
         }
 
 
