@@ -21,11 +21,11 @@ If you find any bugs report them [here](https://github.com/WolfDen133/WFT/issues
       permission: "example.command.use"
 
     title: "&eHello world"
-    content: "&aThis is a test form :)"
+    content: "&aHello {PLAYER}! :) {LINE} &bOnline players&7: &l&3{ONLINE_PLAYERS}&8/&3{MAX_PLAYERS} {LINE}{LINE} This plugin is cool :)"
 
     buttons:
 
-      "&eButton 1":
+      "&eButton 1{LINE}&eClick me!!":
 
         image-type: 0
         image-path: "textures/ui/MashupIcon"
@@ -53,6 +53,11 @@ If you find any bugs report them [here](https://github.com/WolfDen133/WFT/issues
  ```php
  $this->getServer()->getPluginManager("FormCreator")->openForm($player, $formname);
  ```
+ 
+> If you wish to add any more wild cards (string replacements e.g. "{PLAYER}" will replace to the player name)
+```php
+$this->getServer()->getPluginManager("FormCreator")->addWildCard("{FIND}", "{REPLACE}");
+```
 
 ## TODO 
 
