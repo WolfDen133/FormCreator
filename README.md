@@ -46,6 +46,15 @@ If you find any bugs report them [here](https://github.com/WolfDen133/WFT/issues
           - label: "say &bThis plugin is cool!"
             sender: "player" 
  ```
+ 
+## Wild-Cards
+
+| WildCard | Description |
+| --- | --- |
+| `{PLAYER}` | Opening player name |
+| `{LINE}` | Line break |
+| `{ONLINE_PLAYERS}` | Current online player count |
+| `{MAX_PLAYERS}` | Maximum online player count |
 
 ## API 
 
