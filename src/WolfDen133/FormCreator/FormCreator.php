@@ -60,7 +60,7 @@ class FormCreator extends PluginBase
     /**
      * @var array
      */
-    public $wildcards = [];
+    private $wildcards = [];
 
     /**
      * Message list
@@ -85,7 +85,7 @@ class FormCreator extends PluginBase
      *
      * @return void
      */
-    public function loadWildCards () : void
+    private function loadWildCards () : void
     {
         $this->wildcards["{LINE}"] = "\n";
         $this->wildcards["{MAX_PLAYERS}"] = (string) $this->getServer()->getMaxPlayers();
