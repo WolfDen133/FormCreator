@@ -323,10 +323,10 @@ class FormCreator extends PluginBase
     {
         switch ($type) {
             case self::WARN:
-                echo "\x1b[38;5;227m[" . date("H:i:s") . "] [FormCreator/WARNING]: " . $message . "\x1b[m\n";
+                $this->getLogger()->warning("\x1b[38;5;227m[" . date("H:i:s") . "] [FormCreator/WARNING]: " . $message . "\x1b[m\n");
                 break;
             case self::ERROR:
-                echo "\x1b[38;5;203m[" . date("H:i:s") . "] [FormCreator/ERROR]: " . $message . "\x1b[m\n";
+                $this->getLogger()->error("\x1b[38;5;203m[" . date("H:i:s") . "] [FormCreator/ERROR]: " . $message . "\x1b[m\n");
                 break;
 
         }
