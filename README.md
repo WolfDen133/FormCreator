@@ -13,7 +13,7 @@ If you find any bugs report them [here](https://github.com/WolfDen133/WFT/issues
 ## Example
 ### Simple form 
 ```yaml 
-  example:
+  simple-example:
 
     type: "simple"
     
@@ -48,6 +48,39 @@ If you find any bugs report them [here](https://github.com/WolfDen133/WFT/issues
           - label: "say &bThis plugin is cool!"
             sender: "player" 
  ```
+
+### Modal
+```
+  modal-example:
+
+    type: "modal"
+
+    title: "&aModal Form Example"
+    content: "&aHello {PLAYER}! :) {LINE} &bOnline players&7: &l&3{ONLINE_PLAYERS}&8/&3{MAX_PLAYERS} {LINE}{LINE} This plugin is cool :)"
+
+    button1:
+      label: "&aYes"
+      commands :
+        - label: "title {PLAYER} title Welcome!"
+          sender: "console"
+        - label: "say &bHello {PLAYER}!"
+          sender: "player"
+
+    button2:
+      label: "&cNo"
+      commands:
+        - label: "title {PLAYER} title Awesome!"
+          sender: "console"
+
+        - label: "say &bThis plugin is cool!"
+          sender: "player"
+
+
+    command:
+      label: "openmodalform"
+      description: "Opens the example modal form"
+      permission: "formcreator.modaleg.use"
+```
  
 ## Wild-Cards
 
