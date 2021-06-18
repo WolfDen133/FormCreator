@@ -50,7 +50,7 @@ If you find any bugs report them [here](https://github.com/WolfDen133/WFT/issues
  ```
 
 ### Modal
-```
+```yaml
   modal-example:
 
     type: "modal"
