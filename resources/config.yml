@@ -9,11 +9,13 @@ messages:
     invalid-sender: 'Error: This command can only be executed by players'
     no-forms: 'No valid form data section was found, disabling plugin.'
     no-messages: 'No messages where, rewriting default messages.'
+    invalid_form: 'No form data has showed up for the form {NAME}.'
   warnings:
     form:
       title: 'The form {NAME} has no valid title set.'
       command: 'The form {NAME} has no valid command field set.'
       command-label: 'The form {NAME} has no valid command label set.'
+      type: 'The form {NAME} has no valid type set.'
     commands:
       sender: 'The command {KEY} in the form {NAME} has no valid sender set.'
       label: 'The command {KEY} in the form {NAME} has no valid label set.'
@@ -27,14 +29,17 @@ forms:
   # Form internal identifier (This can be anything, keep in mind that there can be)
   example:
 
+    # Form type (Currently implemented: simple, modal)
+    type: "simple"
+
     # Command data (label is required, nothing else is)
     command:
-      label: "openexample"
+      label: "opensimpleform"
       description: "Opens the example ui"
-      permission: "example.command.use"
+      permission: "formcreator.simpleeg.use"
 
     # Form data (title is required, content is not)
-    title: "&eHello world"
+    title: "&aSimple Form Example"
     content: "&aHello {PLAYER}! :) {LINE} &bOnline players&7: &l&3{ONLINE_PLAYERS}&8/&3{MAX_PLAYERS} {LINE}{LINE} This plugin is cool :)"
 
     # Buttons
@@ -65,4 +70,33 @@ forms:
           - label: "say &bThis plugin is cool!"
             sender: "player"
 
-...
+  modal-example:
+
+    type: "modal"
+
+    title: "&aModal Form Example"
+    content: "&aHello {PLAYER}! :) {LINE} &bOnline players&7: &l&3{ONLINE_PLAYERS}&8/&3{MAX_PLAYERS} {LINE}{LINE} This plugin is cool :)"
+
+    button1:
+      label: "&aYes"
+      commands :
+        - label: "title {PLAYER} title Welcome!"
+          sender: "console"
+        - label: "say &bHello {PLAYER}!"
+          sender: "player"
+
+    # Button two is also triggered when the modal form is exited 
+    button2:
+      label: "&cNo"
+      commands:
+        - label: "title {PLAYER} title Awesome!"
+          sender: "console"
+
+        - label: "say &bThis plugin is cool!"
+          sender: "player"
+
+
+    command:
+      label: "openmodalform"
+      description: "Opens the example modal form"
+      permission: "formcreator.modaleg.use"
