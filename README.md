@@ -11,15 +11,17 @@ The way you use it is, you open config (You can also edit the system messages in
 If you find any bugs report them [here](https://github.com/WolfDen133/WFT/issues).
 
 ## Example
-
+### Simple form 
 ```yaml 
   example:
-  
-    command:
-      label: "openexample"
-      description: "Opens the example ui"
-      permission: "example.command.use"
 
+    type: "simple"
+    
+    command:
+      label: "opensimpleform"
+      description: "Opens the example ui"
+      permission: "formcreator.simpleeg.use"
+      
     title: "&eHello world"
     content: "&aHello {PLAYER}! :) {LINE} &bOnline players&7: &l&3{ONLINE_PLAYERS}&8/&3{MAX_PLAYERS} {LINE}{LINE} This plugin is cool :)"
 
