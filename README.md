@@ -86,22 +86,29 @@ If you find any bugs report them [here](https://github.com/WolfDen133/WFT/issues
 
 | WildCard | Description |
 | --- | --- |
-| `{PLAYER}` | Opening player name |
 | `{LINE}` | Line break |
-| `{ONLINE_PLAYERS}` | Current online player count |
-| `{MAX_PLAYERS}` | Maximum online player count |
+| `{NAME}` | The Players name |
+| `{REAL_NAME}` | The Players name |
+| `{DISPLAY_NAME}` | The Players display name |
+| `{PING}` | Players ping |
+| `{ONLINE_PLAYERS}` | Online player count |
+| `{MAX_PLAYERS}` | Max players |
+| `{X}` | Player x pos |
+| `{Y}` | Player y pos |
+| `{Z}` | Player \ pos |
+| `{REAL_TPS}` | Servers current tps |
+| `{TPS}` | Servers average tps |
+| `{REAL_LOAD}` | Servers current load |
+| `{LOAD}` | Servers average load |
+| `{LEVEL_NAME}` | Players level name |
+| `{LEVEL_FOLDER_NAME}` | Players level folder name |
+| `{LEVEL_PLAYERS}` | Players level player count |
+| `{CONNECTION_IP}` | Players connection ip |
+| `{SERVER_IP}` | Servers ip |
+| `{TIME}` | Time |
+| `{DATE}` | Date |
 
-## API 
-
-> This will open the form with the name `$formname` to the player `$player`
- ```php
- $this->getServer()->getPluginManager("FormCreator")->openForm($player, $formname);
- ```
- 
-> If you wish to add any more wild cards (string replacements e.g. "{PLAYER}" will replace to the player name)
-```php
-$this->getServer()->getPluginManager("FormCreator")->addWildCard("{FIND}", "{REPLACE}");
-```
+All of these values can be changed in the FormCreator class
 
 ## TODO 
 
