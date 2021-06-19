@@ -4,5 +4,6 @@ author: WolfDen133
 
 version: 1.2.0
 main: WolfDen133\FormCreator\FormCreator
-api: 3.0.0
+api: 3.20.0
+
 ...
