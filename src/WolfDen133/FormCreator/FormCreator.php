@@ -573,7 +573,7 @@ Usage: /formcreator < help | info | list>
  Version: 1.2.0
  Forms: ' . count($this->forms) . '
  Author: WolfDen133
- API Version: 3.0.0+
+ API Version: 3.21.0+
 <=======================>
                 ');
                 break;
