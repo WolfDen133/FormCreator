@@ -380,16 +380,19 @@ class FormCreator extends PluginBase
 
         });
 
+        /* Call the wildcards for efficency (Thanks Andreas) */
+        $wildcards = $this->getWildCards($player);
+
 
         /* Form data inputs */
         $title = ($this->forms[$name])->getTitle();
-        foreach ($this->getWildCards($player) as $wildcard=>$value) {
+        foreach ($wildcards as $wildcard=>$value) {
             $title = str_replace($wildcard, $value, $title);
         }
         $form->setTitle(TextFormat::colorize(($this->forms[$name])->getTitle()));
 
         $content = ($this->forms[$name])->getContent();
-        foreach ($this->getWildCards($player) as $wildcard=>$value) {
+        foreach ($wildcards as $wildcard=>$value) {
             $content = str_replace($wildcard, $value, $content);
         }
         $form->setContent(TextFormat::colorize(str_replace("{PLAYER}", $player->getName(), $content)));
@@ -402,7 +405,7 @@ class FormCreator extends PluginBase
         foreach ($buttons as $name=>$data) {
             $b_name = $name;
 
-            foreach ($this->getWildCards($player) as $wildcard=>$value) {
+            foreach ($wildcards as $wildcard=>$value) {
                 $name = str_replace($wildcard, $value, $name);
             }
 
@@ -472,17 +475,20 @@ class FormCreator extends PluginBase
 
         });
 
+        /* Call the wildcards for efficency (Thanks Andreas) */
+        $wildcards = $this->getWildCards($player);
+
 
         /* Form data inputs */
         $title = ($this->forms[$name])->getTitle();
-        foreach ($this->getWildCards($player) as $wildcard=>$value) {
+        foreach ($wildcards as $wildcard=>$value) {
             $title = str_replace($wildcard, $value, $title);
         }
         $form->setTitle(TextFormat::colorize(($this->forms[$name])->getTitle()));
 
 
         $content = ($this->forms[$name])->getContent();
-        foreach ($this->getWildCards($player) as $wildcard=>$value) {
+        foreach ($wildcards as $wildcard=>$value) {
             $content = str_replace($wildcard, $value, $content);
         }
         $form->setContent(TextFormat::colorize(str_replace("{PLAYER}", $player->getName(), $content)));
@@ -491,13 +497,13 @@ class FormCreator extends PluginBase
         /* Button registration */
 
         $b1 = $this->forms[$name]->getButton1()["label"] ?? "";
-        foreach ($this->getWildCards($player) as $wildcard=>$value) {
+        foreach ($wildcards as $wildcard=>$value) {
             $b1 = str_replace($wildcard, $value, $b1);
         }
         $form->setButton1(TextFormat::colorize($b1));
 
         $b2 = $this->forms[$name]->getButton2()["label"] ?? "";
-        foreach ($this->getWildCards($player) as $wildcard=>$value) {
+        foreach ($wildcards as $wildcard=>$value) {
             $b2 = str_replace($wildcard, $value, $b2);
         }
         $form->setButton2(TextFormat::colorize($b2));
