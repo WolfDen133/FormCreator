@@ -109,7 +109,7 @@ class FormCreator extends PluginBase
             "{TPS}" => $this->getServer()->getTicksPerSecondAverage(),
             "{REAL_LOAD}" => $this->getServer()->getTickUsage(),
             "{LOAD}" => $this->getServer()->getTickUsageAverage(),
-            "{LEVEL_NAME}" => $player->getWorld()->getProvider->getWorldData->getName(),
+            "{LEVEL_NAME}" => $player->getWorld()->getProvider()->getWorldData()->getName(),
             "{LEVEL_FOLDER_NAME}" => $player->getWorld()->getFolderName(),
             "{LEVEL_PLAYERS}" => count($player->getWorld()->getPlayers()),
             "{CONNECTION_IP}" => $player->getAddress(),
