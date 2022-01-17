@@ -7,11 +7,9 @@ namespace WolfDen133\FormCreator;
 use pocketmine\command\Command;
 use pocketmine\command\CommandSender;
 use pocketmine\console\ConsoleCommandSender;
-use pocketmine\Server;
 use pocketmine\plugin\PluginBase;
 use pocketmine\utils\TextFormat;
 use pocketmine\player\Player;
-use pocketmine\player\PlayerChunkLoader;
 
 use jojoe77777\FormAPI\SimpleForm;
 use jojoe77777\FormAPI\ModalForm;
@@ -102,9 +100,9 @@ class FormCreator extends PluginBase
             "{PING}" => $player->getPing(),
             "{ONLINE_PLAYERS}" => count($this->getServer()->getOnlinePlayers()),
             "{MAX_PLAYERS}" => $this->getServer()->getMaxPlayers(),
-            "{X}" => $currentLocation->getFloorX(),
+            "{X}" => round($player->getX()),
             "{Y}" => round($player->getY()),
-            "{Z}" => $currentLocation->getFloorZ(),
+            "{Z}" => round($player->getZ()),
             "{REAL_TPS}" => $this->getServer()->getTicksPerSecond(),
             "{TPS}" => $this->getServer()->getTicksPerSecondAverage(),
             "{REAL_LOAD}" => $this->getServer()->getTickUsage(),
