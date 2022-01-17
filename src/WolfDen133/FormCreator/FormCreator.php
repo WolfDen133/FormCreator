@@ -112,7 +112,7 @@ class FormCreator extends PluginBase
             "{LEVEL_NAME}" => $player->getWorld()->getProvider()->getWorldData()->getName(),
             "{LEVEL_FOLDER_NAME}" => $player->getWorld()->getFolderName(),
             "{LEVEL_PLAYERS}" => count($player->getWorld()->getPlayers()),
-            "{CONNECTION_IP}" => $player->getAddress(),
+            "{CONNECTION_IP}" => $player->getNetworkSession()->getIP(),
             "{SERVER_IP}" => $this->getServer()->getIP(),
             "{TIME}" => date("H:i:s"),
             "{DATE}" => date("d-m-Y")
