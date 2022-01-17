@@ -6,14 +6,14 @@ namespace WolfDen133\FormCreator;
 
 use pocketmine\command\CommandSender;
 use pocketmine\command\Command;
-use pocketmine\command\PluginIdentifiableCommand;
 use pocketmine\player\Player;
 use pocketmine\plugin\Plugin;
+use pocketmine\plugin\PluginOwned;
 use pocketmine\utils\TextFormat;
 use WolfDen133\BetterBedrock\Form\Form;
 use WolfDen133\FormCreator\Bases\FormBase;
 
-class OpenFormCommand extends Command implements PluginIdentifiableCommand
+class OpenFormCommand extends Plugin implements PluginOwned
 {
     /** @var FormCreator */
     private $plugin;
