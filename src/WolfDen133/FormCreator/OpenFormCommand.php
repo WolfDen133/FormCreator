@@ -13,7 +13,7 @@ use pocketmine\utils\TextFormat;
 use WolfDen133\BetterBedrock\Form\Form;
 use WolfDen133\FormCreator\Bases\FormBase;
 
-class OpenFormCommand extends Plugin implements PluginOwned
+class OpenFormCommand extends Command implements PluginOwned
 {
     /** @var FormCreator */
     private $plugin;
