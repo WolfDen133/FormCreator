@@ -50,7 +50,7 @@ class OpenFormCommand extends Command implements PluginOwned
     public function execute(CommandSender $sender, string $commandLabel, array $args)
     {
         if (!$sender instanceof Player){
-            $this->getPlugin()->logMessage(isset(($this->getPlugin()->getMessages())["errors"]["invalid-sender"]) ? TextFormat::colorize(($this->getPlugin()->getMessages())["errors"]["invalid-sender"]) : ($this->getPlugin()->default_messages)["errors"]["invalid-sender"], 1);
+            $this->getOwningPlugin()->logMessage(isset(($this->getOwningPlugin()->getMessages())["errors"]["invalid-sender"]) ? TextFormat::colorize(($this->getOwningPlugin()->getMessages())["errors"]["invalid-sender"]) : ($this->getOwningPlugin()->default_messages)["errors"]["invalid-sender"], 1);
             return;
         }
 
@@ -88,7 +88,7 @@ class OpenFormCommand extends Command implements PluginOwned
     /**
      * @return FormCreator
      */
-    public function getPlugin(): Plugin
+    public function getOwningPlugin(): Plugin
     {
         return $this->plugin;
     }
