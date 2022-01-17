@@ -7,7 +7,7 @@ namespace WolfDen133\FormCreator;
 use pocketmine\command\CommandSender;
 use pocketmine\command\Command;
 use pocketmine\command\PluginIdentifiableCommand;
-use pocketmine\Player;
+use pocketmine\player\Player;
 use pocketmine\plugin\Plugin;
 use pocketmine\utils\TextFormat;
 use WolfDen133\BetterBedrock\Form\Form;
