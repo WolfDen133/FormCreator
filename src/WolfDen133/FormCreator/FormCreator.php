@@ -10,6 +10,7 @@ use pocketmine\console\ConsoleCommandSender;
 use pocketmine\plugin\PluginBase;
 use pocketmine\utils\TextFormat;
 use pocketmine\player\Player;
+use pocketmine\player\PlayerChunkLoader;
 
 use jojoe77777\FormAPI\SimpleForm;
 use jojoe77777\FormAPI\ModalForm;
@@ -100,9 +101,9 @@ class FormCreator extends PluginBase
             "{PING}" => $player->getPing(),
             "{ONLINE_PLAYERS}" => count($this->getServer()->getOnlinePlayers()),
             "{MAX_PLAYERS}" => $this->getServer()->getMaxPlayers(),
-            "{X}" => round($player->getX()),
+            "{X}" => $this->currentLocation->getFloorX(),
             "{Y}" => round($player->getY()),
-            "{Z}" => round($player->getZ()),
+            "{Z}" => $this->currentLocation->getFloorZ(),
             "{REAL_TPS}" => $this->getServer()->getTicksPerSecond(),
             "{TPS}" => $this->getServer()->getTicksPerSecondAverage(),
             "{REAL_LOAD}" => $this->getServer()->getTickUsage(),
