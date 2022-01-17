@@ -7,7 +7,7 @@ namespace WolfDen133\FormCreator;
 use pocketmine\command\Command;
 use pocketmine\command\CommandSender;
 use pocketmine\console\ConsoleCommandSender;
-use pocketmine\network\mcpe\NetworkSession;
+use pocketmine\Server;
 use pocketmine\plugin\PluginBase;
 use pocketmine\utils\TextFormat;
 use pocketmine\player\Player;
