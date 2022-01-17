@@ -98,7 +98,7 @@ class FormCreator extends PluginBase
             "{NAME}" => $player->getName(),
             "{REAL_NAME}" => $player->getName(),
             "{DISPLAY_NAME}" => $player->getDisplayName(),
-            "{PING}" => $player->getNetworkSession->getPing(),
+            "{PING}" => $player->getNetworkSession()->getPing(),
             "{ONLINE_PLAYERS}" => count($this->getServer()->getOnlinePlayers()),
             "{MAX_PLAYERS}" => $this->getServer()->getMaxPlayers(),
             "{X}" => round($player->getX()),
