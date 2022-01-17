@@ -75,7 +75,7 @@ class FormCreator extends PluginBase
     private array $messages;
 
 
-    public function onEnable()
+    public function onEnable() : void
     {
         $this->saveDefaultConfig();
 
