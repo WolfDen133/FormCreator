@@ -6,14 +6,14 @@ namespace WolfDen133\FormCreator;
 
 use pocketmine\command\CommandSender;
 use pocketmine\command\Command;
-use pocketmine\command\PluginIdentifiableCommand;
-use pocketmine\Player;
+use pocketmine\player\Player;
 use pocketmine\plugin\Plugin;
+use pocketmine\plugin\PluginOwned;
 use pocketmine\utils\TextFormat;
 use WolfDen133\BetterBedrock\Form\Form;
 use WolfDen133\FormCreator\Bases\FormBase;
 
-class OpenFormCommand extends Command implements PluginIdentifiableCommand
+class OpenFormCommand extends Command implements PluginOwned
 {
     /** @var FormCreator */
     private $plugin;
@@ -50,7 +50,7 @@ class OpenFormCommand extends Command implements PluginIdentifiableCommand
     public function execute(CommandSender $sender, string $commandLabel, array $args)
     {
         if (!$sender instanceof Player){
-            $this->getPlugin()->logMessage(isset(($this->getPlugin()->getMessages())["errors"]["invalid-sender"]) ? TextFormat::colorize(($this->getPlugin()->getMessages())["errors"]["invalid-sender"]) : ($this->getPlugin()->default_messages)["errors"]["invalid-sender"], 1);
+            $this->getOwningPlugin()->logMessage(isset(($this->getOwningPlugin()->getMessages())["errors"]["invalid-sender"]) ? TextFormat::colorize(($this->getOwningPlugin()->getMessages())["errors"]["invalid-sender"]) : ($this->getOwningPlugin()->default_messages)["errors"]["invalid-sender"], 1);
             return;
         }
 
@@ -88,7 +88,7 @@ class OpenFormCommand extends Command implements PluginIdentifiableCommand
     /**
      * @return FormCreator
      */
-    public function getPlugin(): Plugin
+    public function getOwningPlugin(): Plugin
     {
         return $this->plugin;
     }

@@ -6,10 +6,12 @@ namespace WolfDen133\FormCreator;
 
 use pocketmine\command\Command;
 use pocketmine\command\CommandSender;
-use pocketmine\command\ConsoleCommandSender;
+use pocketmine\console\ConsoleCommandSender;
+use pocketmine\network\mcpe\NetworkSession;
 use pocketmine\plugin\PluginBase;
 use pocketmine\utils\TextFormat;
-use pocketmine\Player;
+use pocketmine\player\Player;
+use pocketmine\world\World;
 
 use jojoe77777\FormAPI\SimpleForm;
 use jojoe77777\FormAPI\ModalForm;
@@ -75,7 +77,7 @@ class FormCreator extends PluginBase
     private array $messages;
 
 
-    public function onEnable()
+    public function onEnable() : void
     {
         $this->saveDefaultConfig();
 
@@ -97,20 +99,20 @@ class FormCreator extends PluginBase
             "{NAME}" => $player->getName(),
             "{REAL_NAME}" => $player->getName(),
             "{DISPLAY_NAME}" => $player->getDisplayName(),
-            "{PING}" => $player->getPing(),
+            "{PING}" => $player->getNetworkSession()->getPing(),
             "{ONLINE_PLAYERS}" => count($this->getServer()->getOnlinePlayers()),
             "{MAX_PLAYERS}" => $this->getServer()->getMaxPlayers(),
-            "{X}" => round($player->getX()),
-            "{Y}" => round($player->getY()),
-            "{Z}" => round($player->getZ()),
+            "{X}" => round($player->getLocation()->getX()),
+            "{Y}" => round($player->getLocation()->getY()),
+            "{Z}" => round($player->getLocation()->getZ()),
             "{REAL_TPS}" => $this->getServer()->getTicksPerSecond(),
             "{TPS}" => $this->getServer()->getTicksPerSecondAverage(),
             "{REAL_LOAD}" => $this->getServer()->getTickUsage(),
             "{LOAD}" => $this->getServer()->getTickUsageAverage(),
-            "{LEVEL_NAME}" => $player->getLevel()->getName(),
-            "{LEVEL_FOLDER_NAME}" => $player->getLevel()->getFolderName(),
-            "{LEVEL_PLAYERS}" => count($player->getLevel()->getPlayers()),
-            "{CONNECTION_IP}" => $player->getAddress(),
+            "{LEVEL_NAME}" => $player->getWorld()->getProvider()->getWorldData()->getName(),
+            "{LEVEL_FOLDER_NAME}" => $player->getWorld()->getFolderName(),
+            "{LEVEL_PLAYERS}" => count($player->getWorld()->getPlayers()),
+            "{CONNECTION_IP}" => $player->getNetworkSession()->getIP(),
             "{SERVER_IP}" => $this->getServer()->getIP(),
             "{TIME}" => date("H:i:s"),
             "{DATE}" => date("d-m-Y")
@@ -538,10 +540,10 @@ class FormCreator extends PluginBase
     {
         switch ($type) {
             case self::WARN:
-                echo "\x1b[38;5;227m[" . date("H:i:s") . "] [FormCreator/WARNING]: " . $message . "\x1b[m\n";
+                $this->getLogger()->info("\x1b[38;5;227m[" . date("H:i:s") . "] [FormCreator/WARNING]: " . $message . "\x1b[m\n");
                 break;
             case self::ERROR:
-                echo "\x1b[38;5;203m[" . date("H:i:s") . "] [FormCreator/ERROR]: " . $message . "\x1b[m\n";
+                $this->getLogger()->info("\x1b[38;5;203m[" . date("H:i:s") . "] [FormCreator/ERROR]: " . $message . "\x1b[m\n");
                 break;
 
         }
